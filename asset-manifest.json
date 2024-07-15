@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Breeze2/static/css/main.e5f8414b.css",
-    "main.js": "/Breeze2/static/js/main.ea720691.js",
+    "main.js": "/Breeze2/static/js/main.8494da05.js",
     "index.html": "/Breeze2/index.html",
     "main.e5f8414b.css.map": "/Breeze2/static/css/main.e5f8414b.css.map",
-    "main.ea720691.js.map": "/Breeze2/static/js/main.ea720691.js.map"
+    "main.8494da05.js.map": "/Breeze2/static/js/main.8494da05.js.map"
   },
   "entrypoints": [
     "static/css/main.e5f8414b.css",
-    "static/js/main.ea720691.js"
+    "static/js/main.8494da05.js"
   ]
 }
