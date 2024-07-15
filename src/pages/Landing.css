@@ -49,10 +49,12 @@
 
 .suggestion__container {
     border-radius: 10px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    padding: 0 10px;
 }
 
 .suggestion:hover {
