@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+HR:wght@100..400&display=swap");
+
+.landing {
+    background-color: #46aaab;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing__container {
+    display: flex;
+    flex-direction: row;
+    animation: fade-up 400ms backwards;
+    align-items: center;
+}
+
+.landing__logo {
+    width: 100px;
+    height: 100px;
+}
+
+.landing__title {
+    font-size: 70px;
+    font-family: "Playwrite HR", cursive;
+}
+
+.landing__subtitle {
+    font-size: 20px;
+    animation: fade-up 600ms backwards;
+    margin-bottom: 30px;
+}
+
+.landing__search {
+    margin-top: 30px;
+    display: flex;
+    animation: fade-up 800ms backwards;
+}
+
+.suggestion {
+    color: black;
+    background-color: white;
+    padding: 10px 0;
+    min-width: 400px;
+}
+
+.suggestion__container {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.suggestion:hover {
+    background-color: rgb(209, 209, 209);
+    cursor: pointer;
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .landing__search {
+        max-width: 300px;
+    }
+
+    .landing__title {
+        font-size: 50px;
+    }
+
+    .landing__logo {
+        width: 70px;
+        height: 70px;
+    }
+}
