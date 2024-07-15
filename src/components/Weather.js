@@ -111,10 +111,12 @@ function Weather({ data, address }) {
         max = 0;
         min = 1000;
         for (let j = i; j <= i + 24; j++) {
-            if (data[j].temperature > max) {
-                max = data[j].temperature;
-            } else if (data[j].temperature < min) {
-                min = data[j].temperature;
+            if (data[j]) {
+                if (data[j].temperature > max) {
+                    max = data[j].temperature;
+                } else if (data[j].temperature < min) {
+                    min = data[j].temperature;
+                }
             }
         }
 
