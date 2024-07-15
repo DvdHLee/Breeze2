@@ -21,7 +21,6 @@ function Home( {landingLocation} ) {
         setLoading(true);
             try {
                 const endpointLocation = "https://api.weather.gov/points/" + locationLatLng;
-                console.log(endpointLocation)
                 const responseLocation = await axios.get(endpointLocation);
                 setNoData(false);
                 const endpointData = responseLocation.data.properties.forecastHourly;
@@ -39,7 +38,6 @@ function Home( {landingLocation} ) {
     const convertLatLng = async () => {
         try {
             const endpoint = "https://maps.googleapis.com/maps/api/geocode/json?address=" + location + "&key=AIzaSyDOSjPcOElrMnfnZqu8CCfEdIU_eRPSfRU";
-            console.log(endpoint)
             const response = await axios.get(endpoint);
             if (response.data.status === 'ZERO_RESULTS') {
                 setLoading(false);
