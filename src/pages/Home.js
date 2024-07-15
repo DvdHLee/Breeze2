@@ -32,7 +32,7 @@ function Home( {landingLocation} ) {
 
     const convertLatLng = async () => {
         try {
-            const endpoint = "https://maps.googleapis.com/maps/api/geocode/json?address=" + location + "&key=" + process.env.REACT_APP_BREEZE2_API_KEY;
+            const endpoint = "https://maps.googleapis.com/maps/api/geocode/json?address=" + location + "&key=AIzaSyDOSjPcOElrMnfnZqu8CCfEdIU_eRPSfRU";
             const response = await axios.get(endpoint);
             if (response.data.status === 'ZERO_RESULTS') {
                 setLoading(false);
