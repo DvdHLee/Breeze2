@@ -11,6 +11,7 @@ function Home( {landingLocation} ) {
     const [data, setData] = useState();
     const [address, setAddress] = useState("")
     const [noResults, setNoResults] = useState(false);
+    const [noData, setNoData] = useState(false);
 
     const searched = (address) => {
         setLocation(address);
@@ -21,10 +22,14 @@ function Home( {landingLocation} ) {
             try {
                 const endpointLocation = "https://api.weather.gov/points/" + locationLatLng;
                 const responseLocation = await axios.get(endpointLocation);
+                setNoData(false);
                 const endpointData = responseLocation.data.properties.forecastHourly;
                 const responseData = await axios.get(endpointData);
                 setData(responseData.data.properties.periods);
             } catch (error) {
+                if (error.response.status === 404) {
+                    setNoData(true);
+                }
                 console.error(error.message);
             }
         setLoading(false);
@@ -60,8 +65,9 @@ function Home( {landingLocation} ) {
     return (
         <div className="home">
             <Header searched={searched}></Header>
-            {data && !loading && !noResults && <Weather data={data} address={address}></Weather>}
+            {data && !loading && !noData && !noResults && <Weather data={data} address={address}></Weather>}
             {noResults && <div className='no__results'>No Results <br></br> Please try another location</div>}
+            {noData && !noResults && <div className='no__results'>International data unavailable <br></br> Please try a location in the US</div>}
             {loading && <div className='loading__container'><img src={`${process.env.PUBLIC_URL}/assets/loading.png`} alt='loading img' className='loading'></img></div>}
         </div>
     )
